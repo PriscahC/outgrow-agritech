@@ -369,7 +369,7 @@ Confirmation message: Your request has been sent. Our field team will confirm wi
 
 #### 3.5.2 Tab 1 — Chat & Photo
 
-**HeyGen Avatar Embed Block** (at top of white card, above chat window):
+**LiveAvatar Embed Block** (at top of white card, above chat window):
 
 **Label**: Talk to Safi 🌱
 
@@ -378,12 +378,10 @@ Confirmation message: Your request has been sent. Our field team will confirm wi
 **HTML Embed Block**:
 ```html
 <iframe
-  allow=\"camera; microphone; clipboard-write; display-capture; autoplay\"
-  src=\"https://app.heygen.com/embeds/d0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0\"
-  width=\"100%\"
-  height=\"500px\"
-  title=\"Safi AI Advisor\"
-  frameborder=\"0\"
+  src=\"https://embed.liveavatar.com/v1/6dd3d3df-2b15-4589-b6db-ebb9e48627e1\"
+  allow=\"microphone\"
+  title=\"Safi - Outgrow AI Advisor\"
+  style=\"width:100%; aspect-ratio:16/9; border-radius:16px; border:none;\"
 ></iframe>
 ```
 
@@ -394,7 +392,7 @@ Confirmation message: Your request has been sent. Our field team will confirm wi
 │   Speak in your language    │
 ├─────────────────────────────┤
 │                             │
-│   [Safi HeyGen Avatar]      │
+│   [Safi LiveAvatar]         │
 │   Live and interactive      │
 │                             │
 └─────────────────────────────┘
@@ -406,7 +404,7 @@ Confirmation message: Your request has been sent. Our field team will confirm wi
 
 ---
 
-**Chat Window** (inside white floating card, below HeyGen embed):
+**Chat Window** (inside white floating card, below LiveAvatar embed):
 
 **Visual Style**:
 - Generous padding and line spacing

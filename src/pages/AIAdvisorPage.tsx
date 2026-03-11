@@ -268,14 +268,17 @@ const AIAdvisorPageRedesign = () => {
                   <h2 className="text-2xl font-bold text-primary mb-2">Talk to Safi 🌱</h2>
                   <p className="text-muted-foreground">Speak directly to our AI advisor in your language</p>
                 </div>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <div className="relative w-full">
                   <iframe
-                    src="https://app.heygen.com/embeds/d0c8c4e8b7f14c1b9d1f3e5a7b9c2d4e"
-                    title="Safi AI Advisor"
-                    allow="camera; microphone; clipboard-write; display-capture; autoplay"
-                    allowFullScreen
-                    className="absolute top-0 left-0 w-full h-full rounded-xl"
-                    style={{ border: 'none' }}
+                    src="https://embed.liveavatar.com/v1/6dd3d3df-2b15-4589-b6db-ebb9e48627e1"
+                    allow="microphone"
+                    title="Safi - Outgrow AI Advisor"
+                    style={{
+                      width: '100%',
+                      aspectRatio: '16/9',
+                      borderRadius: '16px',
+                      border: 'none'
+                    }}
                   />
                 </div>
               </CardContent>

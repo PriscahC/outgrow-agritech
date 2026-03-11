@@ -258,9 +258,33 @@ const AIAdvisorPageRedesign = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center p-4 overflow-hidden">
+      <div className="flex-1 flex flex-col items-center justify-start p-4 overflow-y-auto space-y-6">
+        {activeTab === 'chat' && (
+          <>
+            {/* HeyGen Avatar Embed */}
+            <Card className="w-full max-w-4xl shadow-2xl border-none">
+              <CardContent className="p-6">
+                <div className="text-center mb-4">
+                  <h2 className="text-2xl font-bold text-primary mb-2">Talk to Safi 🌱</h2>
+                  <p className="text-muted-foreground">Speak directly to our AI advisor in your language</p>
+                </div>
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src="https://app.heygen.com/embeds/d0c8c4e8b7f14c1b9d1f3e5a7b9c2d4e"
+                    title="Safi AI Advisor"
+                    allow="camera; microphone; clipboard-write; display-capture; autoplay"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full rounded-xl"
+                    style={{ border: 'none' }}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </>
+        )}
+
         {activeTab === 'chat' ? (
-          <Card className="w-full max-w-4xl h-[calc(100vh-120px)] shadow-2xl border-none flex flex-col">
+          <Card className="w-full max-w-4xl h-[600px] shadow-2xl border-none flex flex-col">
             {/* Chat Messages */}
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
               {messages.map((msg, index) => (

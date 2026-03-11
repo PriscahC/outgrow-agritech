@@ -369,7 +369,44 @@ Confirmation message: Your request has been sent. Our field team will confirm wi
 
 #### 3.5.2 Tab 1 — Chat & Photo
 
-**Chat Window** (inside white floating card):
+**HeyGen Avatar Embed Block** (at top of white card, above chat window):
+
+**Label**: Talk to Safi 🌱
+
+**Subtext**: Speak directly to our AI advisor in your language
+
+**HTML Embed Block**:
+```html
+<iframe
+  allow=\"camera; microphone; clipboard-write; display-capture; autoplay\"
+  src=\"https://app.heygen.com/embeds/d0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0\"
+  width=\"100%\"
+  height=\"500px\"
+  title=\"Safi AI Advisor\"
+  frameborder=\"0\"
+></iframe>
+```
+
+**Visual Layout**:
+```
+┌─────────────────────────────┐
+│   Talk to Safi 🌱           │
+│   Speak in your language    │
+├─────────────────────────────┤
+│                             │
+│   [Safi HeyGen Avatar]      │
+│   Live and interactive      │
+│                             │
+└─────────────────────────────┘
+     ↓
+[Existing chat interface below]
+```
+
+**Spacing**: 24px margin below iframe before chat window begins
+
+---
+
+**Chat Window** (inside white floating card, below HeyGen embed):
 
 **Visual Style**:
 - Generous padding and line spacing

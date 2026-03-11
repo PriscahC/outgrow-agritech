@@ -110,6 +110,7 @@
   - Placeholder pages: Farmer Accounts, Buyer Accounts, Extension Services, Analytics, Settings, Profile
 - AI Advisor features:
   - Modern chat interface: Full-screen deep green background (#1B4332), floating white rounded card centered on screen, minimal top bar with back arrow and tab switcher
+  - HeyGen avatar embed: Interactive AI avatar "Safi 🌱" at top of page with iframe embed, label "Talk to Safi 🌱", subtext "Speak directly to our AI advisor in your language", responsive 16:9 aspect ratio container
   - Chat tab: Clean conversation flow with user messages (right-aligned green bubbles) and AI messages (left-aligned white bubbles with bot avatar), inline escalation messages with amber left border, confidence badges inside AI bubbles
   - Consolidated input bar: Photo icon (left), text input placeholder "Ask about your crop..." (center), mic icon and send button (right) - all in one clean bar
   - Hidden by default: Quick questions (bottom sheet with 6 chips), Recent cases (bottom sheet with diagnosis history)

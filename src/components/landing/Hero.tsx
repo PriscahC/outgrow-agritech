@@ -30,9 +30,7 @@ export const Hero = () => {
                 <span className="text-secondary italic">Africa's Smartest</span> <br />
                 Farm Network
               </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Empowering smallholder farmers across Kenya, Uganda, Nigeria, Ghana, and Malawi with real-time data, premium markets, and sustainable growth.
-              </p>
+              <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">{"Helping smallholder farmers across Kenya, Uganda, Nigeria, Ghana, and Malawi solve crop loss, market access, and price uncertainty using AI crop disease detection  Weather prediction  Market price forecasting  Smart farming insights."}</p>
             </div>
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
               <Button 

@@ -63,7 +63,7 @@ export const SignUpForm = () => {
 
           <Card className="shadow-2xl border-none p-4 bg-card rounded-[2rem] transform hover:-rotate-1 transition-transform duration-500">
             <CardHeader className="pb-8">
-              <CardTitle className="text-2xl font-serif text-primary">Join Outgrow Network</CardTitle>
+              <CardTitle className="text-2xl font-serif text-primary">{"Register your farm to receive AI-powered insights, real-time monitoring, and direct access to premium markets."}</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>

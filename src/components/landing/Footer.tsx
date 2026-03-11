@@ -52,7 +52,7 @@ export const Footer = () => {
               </li>
               <li className="flex gap-3 text-sm text-primary-foreground/60">
                 <Mail className="h-4 w-4 text-secondary shrink-0" />
-                <span>contact@outgrow.ag</span>
+                <span>{"📧 Email: support@outgrow.africa"}</span>
               </li>
             </ul>
           </div>

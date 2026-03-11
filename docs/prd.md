@@ -336,9 +336,9 @@ Confirmation message: Your request has been sent. Our field team will confirm wi
 
 **Tagline**: Describe your problem or upload a photo — we'll help you figure it out.
 
-**Layout**: Two-tab interface with chat-style interaction
+**Layout**: Full-screen immersive chat experience with tab switcher
 
-**Design**: Match existing app — dark green (#1B4332) header/sidebar, cream (#FAF7F0) background, amber (#D4A017) accents, white cards, soft shadows
+**Design Philosophy**: One thing at a time. Clean, focused, premium conversation interface inspired by modern chat apps.
 
 **Tone**: Warm, simple, conversational. Like texting a knowledgeable friend.
 
@@ -350,85 +350,112 @@ Confirmation message: Your request has been sent. Our field team will confirm wi
 - API: mistralai/Mistral-7B-Instruct-v0.2
 - API Key: rc_bfa0f87736b5cf58677193be2558e5383547cd1d344ea79126dff8d9a1b1b8ad
 
-#### 3.5.1 Tab Navigation
-Two tabs at top of page:
-- 💬 Chat & Photo (default open)
-- 📱 WhatsApp Voice
+#### 3.5.1 Overall Layout Structure
+
+**Full-screen deep forest green background** (#1B4332) — no sidebar visible on this page for immersive experience.
+
+**Top Bar** (minimal, fixed):
+- Left: Small back arrow (← Dashboard) in white
+- Center: AI Advisor in white text
+- Right: Small tab switcher — 💬 Chat | 📱 WhatsApp (active tab highlighted in amber)
+
+**Main Content Area**:
+- Centered floating white rounded card (70% width on desktop, full width on mobile)
+- Soft shadow for depth
+- Fixed height with internal scroll
+- All interaction happens within this card
 
 ---
 
 #### 3.5.2 Tab 1 — Chat & Photo
 
-**Greeting Card** (top of page):
-- Icon: friendly robot face 🤖
-- Headline: Hi Priscah 👋 What's going on with your crop?
-- Subtext: Describe your problem, upload a photo, or switch to WhatsApp to send a voice message.
+**Chat Window** (inside white floating card):
 
-**Three Input Options** (large, tappable buttons in a row):
-- 📸 Upload Photo — amber filled button
-- ✍️ Type a Question — green outline button
-- 🎙️ Record Voice Note — green outline button (in-app mic, for quick use)
+**Visual Style**:
+- Generous padding and line spacing
+- Large friendly typography
+- Calm, focused atmosphere
 
-**Chat Interface**:
-- Scrollable message area displaying conversation history
-- User messages aligned right with light amber background
-- AI responses aligned left with white background
-- Each message shows timestamp
-- AI responses include confidence score when applicable
-- Real-time typing indicator when AI is processing
+**Message Bubbles**:
 
-**Message Input Area** (bottom of chat):
-- Text input field with placeholder: Type your question here...
-- 📎 Attach photo button
-- 🎙️ Voice note button
-- Send button (amber, arrow icon)
+**Farmer messages** (right-aligned):
+- Green bubble (#1B4332)
+- White text
+- Small avatar circle with initial P (top-right)
+- Timestamp below in tiny grey text
 
-**AI Response Format**:
-- Diagnosis or answer text
-- Actionable recommendations in bullet points
-- Confidence score with color indicator (green ≥80%, amber 60-79%, red <60%)
-- Disclaimer: This is AI guidance. For serious cases, we recommend confirming with an agronomist.
-- Two action buttons: ✅ This helped | 🚨 Escalate to Agronomist
+**AI messages** (left-aligned):
+- White bubble
+- Dark text
+- Small robot avatar (🤖) on left
+- Confidence badge inside bubble: small amber pill (● 87% confident)
+- Timestamp below in tiny grey text
 
-**Pre-loaded Dummy Conversation** (shows what a session looks like):
+**Escalation Message** (special AI bubble):
+- White bubble with amber left border (4px thick)
+- 🚨 icon at top
+- Escalation text inline with conversation flow
+- No separate card or panel
 
-> 👩 Priscah (sent a photo + text)
-> My maize leaves have white streaks and some are turning brown at the tips
-> — Jun 28, 10:42 AM
+**Pre-loaded Dummy Conversation**:
 
-> 🤖 Outgrow AI
-> Thanks for the photo, Priscah. Based on what I can see, this looks like Maize Streak Virus, which is spread by tiny insects called leafhoppers.
->
-> Here's what to do:
-> - 🗑 Remove and destroy the most affected plants
-> - 💊 Spray with Acetamiprid to control leafhoppers
-> - 🚫 Avoid planting near other infected fields
-> - 👁 Check your crop daily for the next 7 days
->
-> Confidence: 87% 🟢
-> This is AI guidance. For serious cases, we recommend confirming with an agronomist.
->
-> Two buttons: ✅ This helped | 🚨 Escalate to Agronomist
-> — Jun 28, 10:43 AM
+```
+[Robot avatar] Outgrow AI                    10:43 AM
+─────────────────────────────────────────────
+Hi Priscah 👋
+What's going on with your crop today?
+─────────────────────────────────────────────
 
-**Escalation Flow Card** (shown below conversation when escalated):
+                              [P] Priscah  10:42 AM
+                  My maize leaves have white streaks
+                  and some are turning brown at the tips
+                                        📎 Photo attached
 
-Amber-bordered card:
-- 🚨 We've flagged this case to our agronomist team.
-- James Otieno (Outgrow Kenya) will call you within 24 hours on +254 712 xxx xxx
-- You'll also receive an SMS with interim advice shortly.
-- Status badge: Escalated — Awaiting Agronomist 🟡
+[Robot avatar] Outgrow AI                    10:43 AM
+─────────────────────────────────────────────
+This looks like Maize Streak Virus,
+spread by leafhoppers. Here's what to do:
 
-**Quick Question Chips** (below input area, scrollable):
-- 🌿 Why are my leaves yellowing?
-- 🐛 I see insects on my crop
-- 💧 My soil feels too wet
-- 🌾 When should I harvest?
-- 🌱 What fertilizer should I use now?
-- ☀️ Is the weather affecting my crop?
+🗑 Remove the most affected plants
+💊 Spray Acetamiprid to control leafhoppers
+🚫 Avoid planting near infected fields
+👁 Monitor daily for 7 days
 
-**Past Diagnoses** (collapsible section at bottom):
-Title: Your recent cases
+● 87% confident
+─────────────────────────────────────────────
+
+[Robot avatar] Outgrow AI                    10:43 AM
+[Amber left border]
+─────────────────────────────────────────────
+🚨 We've flagged this to James Otieno
+(Outgrow agronomist). He'll call you
+within 24 hours.
+─────────────────────────────────────────────
+```
+
+**Input Area** (bottom of chat card, always visible):
+
+Clean single bar with three integrated controls:
+- Left: 📸 photo icon (tap to upload)
+- Center: Text input field — placeholder: *Ask about your crop...*
+- Right: 🎙 mic icon | ➤ send button (amber)
+
+No separate Upload Photo / Type / Record buttons — all consolidated into input bar.
+
+**Quick Questions** (hidden by default):
+- Small link below input bar: ✦ Quick questions
+- Tapping opens bottom sheet with 6 question chips:
+  - 🌿 Why are my leaves yellowing?
+  - 🐛 I see insects on my crop
+  - 💧 My soil feels too wet
+  - 🌾 When should I harvest?
+  - 🌱 What fertilizer should I use now?
+  - ☀️ Is the weather affecting my crop?
+- Closes after selection
+
+**Recent Cases** (hidden by default):
+- Small link below input bar next to Quick Questions: 📋 Recent cases
+- Tapping slides up bottom sheet with cases list:
 
 | Date | Issue | Confidence | Status |
 |---|---|---|---|
@@ -443,34 +470,27 @@ Each row has: View Details → link
 
 #### 3.5.3 Tab 2 — WhatsApp Voice Agent
 
-**Design**: Clean instructional card layout. Warm and simple — like an onboarding guide.
+**Design**: Single centered white card on full green background. Simple, clean instructional layout.
 
-**Hero Card** (top, amber background):
-- WhatsApp icon + mic icon
+**Hero Section** (top of card, amber background strip):
+- Large WhatsApp icon + mic icon
 - Headline: Talk to Outgrow AI on WhatsApp
-- Subtext: Send a voice message in any language — Swahili, English, Hausa, Twi, Chichewa — and our AI will respond with advice in your language.
+- Subtext: Send a voice message in any language — we'll respond with advice in your language.
 
-**How It Works** (3 simple steps with large icons):
+**How It Works** (3 large clean steps with icons):
 
-1. 📱 Save our WhatsApp number
+1. 📱 **Save our WhatsApp number**
    +254 700 OUTGROW (698 4769)
    Big amber button: Save Number →
 
-2. 🎙️ Send a voice message
-   Just hold the mic button on WhatsApp and describe what's happening with your crop. You can also send a photo of the affected plant.
+2. 🎙️ **Send a voice message**
+   Describe what's happening with your crop. You can also send a photo.
 
-3. 🤖 Get advice in seconds
-   Our AI will listen, understand your language, and send back a voice reply with clear steps to follow. If it's unsure, it will ask for a photo or connect you to an agronomist.
-
-**What You Can Ask** (example chips, non-tappable, just illustrative):
-- 🗣 Mahindi yangu yana rangi ya njano (Swahili — My maize is turning yellow)
-- 🗣 I see white powder on my leaves (English)
-- 🗣 Gooro mim so (Twi — My crop has a problem)
-
-Small note below: The AI automatically detects your language — no need to select it.
+3. 🤖 **Get advice in seconds**
+   Our AI will listen and send back a voice reply with clear steps.
 
 **Language Support Badge Row**:
-Five pill badges in a row:
+Five pill badges:
 - 🇰🇪 Swahili
 - 🇬🇧 English
 - 🇳🇬 Hausa
@@ -479,26 +499,16 @@ Five pill badges in a row:
 
 Small note: More languages coming soon
 
-**What Happens If AI Is Unsure** (collapsible info card):
-Title: What if the AI doesn't know the answer?
-- Step 1: 📸 It will ask you to send a photo of the affected crop
-- Step 2: 📩 You'll receive an SMS with the best available advice
-- Step 3: 📞 A human agronomist from our team will call you within 24 hours
+**Collapsible Section** (hidden by default):
+Small toggle link: How does it work? ↓
 
-**Sample WhatsApp Conversation Preview** (mockup chat bubbles):
-
-> 👩 [Voice note — 0:12] (Swahili)
-
-> 🤖 Outgrow AI:
-> Habari Priscah! Nimesikia ujumbe wako. Inaonekana kama ugonjwa wa Maize Streak Virus...
-> (Translation shown below in small grey text: Hi Priscah! I heard your message. This looks like Maize Streak Virus...)
-> [Voice note — 0:28]
->
-> Confidence: 87% ✅
-> Kama tatizo linaendelea, tutakupelekea mtaalamu. / If the problem continues, we'll connect you to an agronomist.
+Expands to show:
+- What you can ask (example voice queries)
+- What happens if AI is unsure (escalation flow)
+- Sample WhatsApp conversation preview
 
 **Sticky Bottom CTA**:
-Green bar at bottom of tab:
+Green bar at bottom:
 - 💬 Prefer to type or upload a photo instead?
 - Link: Switch to Chat →
 

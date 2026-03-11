@@ -109,16 +109,16 @@
   - Device Management: Summary stats, device table with status/battery/ping, offline alert panel
   - Placeholder pages: Farmer Accounts, Buyer Accounts, Extension Services, Analytics, Settings, Profile
 - AI Advisor features:
-  - Two tabs: Chat & Photo, WhatsApp Voice
-  - Chat tab: Greeting card, 3 input options (upload photo, type question, record voice), real-time streaming conversation with AI, escalation flow card, quick question chips, past diagnoses table
-  - WhatsApp Voice tab: Hero card, how it works (3 steps), language support badges (Swahili, English, Hausa, Twi, Chichewa), sample conversation preview, sticky bottom CTA
+  - Modern chat interface: Full-screen deep green background (#1B4332), floating white rounded card centered on screen, minimal top bar with back arrow and tab switcher
+  - Chat tab: Clean conversation flow with user messages (right-aligned green bubbles) and AI messages (left-aligned white bubbles with bot avatar), inline escalation messages with amber left border, confidence badges inside AI bubbles
+  - Consolidated input bar: Photo icon (left), text input placeholder "Ask about your crop..." (center), mic icon and send button (right) - all in one clean bar
+  - Hidden by default: Quick questions (bottom sheet with 6 chips), Recent cases (bottom sheet with diagnosis history)
+  - WhatsApp tab: Centered white card with large WhatsApp icon, 3-step process with emoji numbers, single amber CTA button, language badges, collapsible "How does it work?" details
   - Edge Functions: ai-crop-advisor (LLM multimodal with streaming), voice-to-text (Speech-to-Text), text-to-voice (Text-to-Speech)
   - Database: ai_conversations and ai_diagnoses tables with RLS policies
   - Functional chatbot: Real-time streaming responses, conversation history, photo upload with base64 conversion and AI analysis, Enter key to send, loading states with spinner
   - System prompt: Agricultural AI advisor context for Outgrow helping African smallholder farmers
   - Auto-scroll to bottom on new messages
-  - Quick question chips populate input field
-  - Voice recording capability (placeholder)
-  - Confidence scoring and escalation to agronomist
+  - Design inspired by WhatsApp and Claude: One thing at a time, calm focused premium vibe, generous spacing, large friendly typography
 
 

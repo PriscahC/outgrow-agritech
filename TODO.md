@@ -1,0 +1,124 @@
+# Task: Outgrow Landing Page + Farmer Dashboard + Buyer Portal + Admin Portal Implementation
+
+## Plan
+- [✓] Landing Page
+  - [✓] Theme Configuration
+  - [✓] Layout and Navigation
+  - [✓] Core Sections
+  - [✓] Registration Form
+  - [✓] Integration and Polish
+- [✓] Authentication & Database
+  - [✓] Initialize Supabase with auth
+  - [✓] Create database schema (farmers, farms, sensor_readings, alerts, sms_logs)
+  - [✓] Set up RLS policies
+  - [✓] Configure AuthContext and RouteGuard
+- [✓] Weather API Integration
+  - [✓] Create Edge Function for weather data
+  - [✓] Deploy Edge Function with plugin callback
+- [✓] Dashboard Layout
+  - [✓] Create DashboardLayout with sidebar and top bar
+  - [✓] Implement mobile bottom navigation
+  - [✓] Create responsive layout structure
+- [✓] Dashboard Sections
+  - [✓] Welcome Banner with weather widget
+  - [✓] Farm Health Score gauge
+  - [✓] Key Stats cards
+  - [✓] Soil pH chart
+  - [✓] Yield Forecast chart
+  - [✓] IoT Sensor readings
+  - [✓] Pest & Disease alerts
+  - [✓] SMS notification log
+  - [✓] Quick Actions row
+- [✓] Farmer Portal Pages
+  - [✓] Create Dashboard main page
+  - [✓] Create Farm Map page with mobile-first interactive map
+  - [✓] Create Crop Monitor page with full PRD implementation
+  - [✓] Create AI Advisor page with chat interface and voice agent
+  - [✓] Create Market Access page with buyer offers
+  - [✓] Create Finance page with loan management
+  - [✓] Create Reports page with season summary
+  - [✓] Create Profile page with settings
+- [✓] Buyer Portal Implementation
+  - [✓] Create BuyerLayout component with navigation
+  - [✓] Create Buyer Dashboard with stats and upcoming harvests
+  - [✓] Create Browse Farms page with filters
+  - [✓] Create Farm Profile detail page with offer form
+  - [✓] Create Watchlist page with alert toggles
+  - [✓] Create Procurement page with offer tracking
+  - [✓] Create Quality Reports page with scores
+  - [✓] Create Buyer Profile page with preferences
+- [✓] Admin Portal Implementation
+  - [✓] Create AdminLayout component with role-based navigation
+  - [✓] Create Operations Dashboard (Admin view)
+  - [✓] Create Farm Onboarding page with pipeline tabs
+  - [✓] Create Device Management page with IoT monitoring
+  - [✓] Create placeholder pages for remaining features
+  - [✓] Complete Admin Profile page with full dummy data
+- [✓] Integration
+  - [✓] Update routes with auth protection
+  - [✓] Connect landing page signup to auth
+  - [✓] Add login page
+  - [✓] Test authentication flow
+  - [✓] Add buyer routes to routing system
+  - [✓] Link landing page Browse Farms to buyer portal
+  - [✓] Add admin routes to routing system
+  - [✓] Create AI Advisor Edge Functions (LLM, Speech-to-Text, Text-to-Speech)
+  - [✓] Deploy Edge Functions with API integrations
+- [✓] Final Polish
+  - [✓] Run lint and fix issues
+  - [✓] Verify mobile responsiveness
+  - [✓] Test all navigation links
+  - [✓] Fix Farm Map mobile layout
+
+## Notes
+- Colors: Primary #1B4332, Accent #D4A017, Background #FAF7F0
+- Mobile-first design with bottom nav
+- Desktop with left sidebar
+- Weather API integrated via Edge Function
+- First user to sign up becomes admin
+- Demo data will be created automatically for new farmers
+- All pages implemented with warm, human tone
+- Dummy data for Priscah W. from Kenya growing Maize (Farmer)
+- Dummy data for James Kariuki from Unga Group (Buyer)
+- Dummy data for Sarah Mwangi (Admin) and David Ouma (Field Agent)
+- Complete farmer portal with 8 functional pages
+- Complete buyer portal with 7 functional pages
+- Admin portal with 3 core pages + 6 placeholder pages
+- Farm Map page features (mobile-optimized):
+  - Full-screen SVG map with 3 color-coded zones
+  - Slim top bar with timestamp and request scan button
+  - Floating bottom chip bar with 5 controls (Satellite, Heat, Moisture, Sensors, Drone Path)
+  - Collapsible legend button (bottom-right, Info icon)
+  - Zone labels overlaid directly on map
+  - Desktop: Right sidebar with controls, zones, sensors, drone scans
+  - Mobile: Bottom sheet with farm details, floating MapPin button
+  - 3 IoT sensor markers with clickable popups
+  - Drone flight path overlay
+- Buyer Portal features:
+  - Dashboard: Welcome banner, 4 stat cards, upcoming harvests feed, price pulse
+  - Browse Farms: Filter bar (crop, country, quality), 6 farm cards with verified badges
+  - Farm Profile: Hero card, farm vitals, yield chart, IoT readings, drone map, make offer form
+  - Watchlist: Saved farms with remove and harvest alert toggles
+  - Procurement: Tabs for active/completed/cancelled offers with status tracking
+  - Quality Reports: Farm quality scores with sub-scores and PDF download
+  - Buyer Profile: Company info, crop interests, notification preferences, account stats
+- Admin Portal features:
+  - Role-based navigation (Admin full access, Field Agent limited)
+  - Operations Dashboard: 6 stat cards, farms by country chart, field visit schedule, active alerts feed
+  - Farm Onboarding: Pipeline tabs (Pending Visit, Visit Done, Processing, Active) with farm cards
+  - Device Management: Summary stats, device table with status/battery/ping, offline alert panel
+  - Placeholder pages: Farmer Accounts, Buyer Accounts, Extension Services, Analytics, Settings, Profile
+- AI Advisor features:
+  - Two tabs: Chat & Photo, WhatsApp Voice
+  - Chat tab: Greeting card, 3 input options (upload photo, type question, record voice), real-time streaming conversation with AI, escalation flow card, quick question chips, past diagnoses table
+  - WhatsApp Voice tab: Hero card, how it works (3 steps), language support badges (Swahili, English, Hausa, Twi, Chichewa), sample conversation preview, sticky bottom CTA
+  - Edge Functions: ai-crop-advisor (LLM multimodal with streaming), voice-to-text (Speech-to-Text), text-to-voice (Text-to-Speech)
+  - Database: ai_conversations and ai_diagnoses tables with RLS policies
+  - Functional chatbot: Real-time streaming responses, conversation history, photo upload with base64 conversion and AI analysis, Enter key to send, loading states with spinner
+  - System prompt: Agricultural AI advisor context for Outgrow helping African smallholder farmers
+  - Auto-scroll to bottom on new messages
+  - Quick question chips populate input field
+  - Voice recording capability (placeholder)
+  - Confidence scoring and escalation to agronomist
+
+

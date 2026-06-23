@@ -73,17 +73,6 @@ See [src/routes.tsx](src/routes.tsx) for the full route list.
 pnpm install
 ```
 
-### Environment variables
-
-The frontend Supabase client expects the following variables:
-
-```bash
-VITE_SUPABASE_URL=
-VITE_SUPABASE_ANON_KEY=
-```
-
-These are read in [src/db/supabase.ts](src/db/supabase.ts).
-
 ### Validate the project
 
 ```bash
